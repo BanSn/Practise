@@ -9,13 +9,10 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import util.Constants;
+
 public class FileSplittter {
 	
-	private static final String LOG_FILE_NAME = "logfile";
-	private static final String LOG_DIR = "logdir";
-	private static final String RESOURCE_DIR = "resources";
-	private static final String FILE_SEPERATOR = "/";
-	private static final String DOT_APPENDER = ".";
 	private  long lineSize = 4;
 	private String outputDir;
 	private String inputFile;
@@ -65,7 +62,7 @@ public class FileSplittter {
         	String line = null;
         	int lineSize = 1;
         	int fileSuffix = 1;
-        	out = new BufferedWriter(new FileWriter(outputDir + FILE_SEPERATOR  + LOG_FILE_NAME + DOT_APPENDER + fileSuffix));
+        	out = new BufferedWriter(new FileWriter(outputDir + Constants.FILE_SEPERATOR  + Constants.LOG_FILE_NAME + Constants.DOT_APPENDER + fileSuffix));
         	
         	while ((line = in.readLine()) != null) {
         		out.write(line);
@@ -76,7 +73,7 @@ public class FileSplittter {
         			fileSuffix++;
         			lineSize = 1;
         			out.close();
-        			out = new BufferedWriter(new FileWriter(outputDir + FILE_SEPERATOR  + LOG_FILE_NAME + DOT_APPENDER + fileSuffix));
+        			out = new BufferedWriter(new FileWriter(outputDir + Constants.FILE_SEPERATOR  + Constants.LOG_FILE_NAME + Constants.DOT_APPENDER + fileSuffix));
         		}
         	}
         	

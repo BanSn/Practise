@@ -13,6 +13,7 @@ public final class Constants {
 	public static final String FILE_SEPERATOR = "/";
 	public static final String NEW_LINE = "\n";
 	public static final String TEMP_DIRECTORY = "./tmp/twitterloganalyser";
+	public static final String DOT_APPENDER = ".";
 
 	
 	private Constants(){}
